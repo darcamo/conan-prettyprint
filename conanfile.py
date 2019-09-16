@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake, tools
+from conans import CMake, ConanFile, tools
 
 
 class PrettyprintConan(ConanFile):
@@ -21,3 +21,6 @@ class PrettyprintConan(ConanFile):
 
     def package(self):
         self.copy("*.hpp", dst="include", src="cxx-prettyprint/")
+
+    def package_id(self):
+        self.info.header_only()
